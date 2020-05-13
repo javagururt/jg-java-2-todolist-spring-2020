@@ -14,9 +14,9 @@ public class ToDoListApplication {
 
         while (true) {
             try {
-                System.out.println("1. Create task");
-                System.out.println("2. Find task by id");
-                System.out.println("3. Exit");
+                System.out.println("1. Create task.");
+                System.out.println("2. Find task by id.");
+                System.out.println("3. Exit.");
                 int userInput = Integer.valueOf(scanner.nextLine());
                 switch (userInput) {
                     case 1:
