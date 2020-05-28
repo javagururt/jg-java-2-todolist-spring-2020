@@ -1,6 +1,7 @@
 package com.javaguru.todolist.console;
 
-import com.javaguru.todolist.domain.Task;
+import com.javaguru.todolist.domain.TaskEntity;
+import com.javaguru.todolist.dto.TaskDto;
 import com.javaguru.todolist.service.TaskService;
 import com.javaguru.todolist.service.validation.TaskNotFoundException;
 import com.javaguru.todolist.service.validation.TaskValidationException;
@@ -25,15 +26,17 @@ public class ConsoleUI {
                         String name = scanner.nextLine();
                         System.out.println("Enter task description: ");
                         String description = scanner.nextLine();
-                        Task task = new Task(name, description);
-                        Task createdTask = service.save(task);
-                        System.out.println("Task successfully created: " + createdTask);
+                        TaskDto dto = new TaskDto();
+                        dto.setName(name);
+                        dto.setDescription(description);
+                        TaskDto taskDto = service.save(dto);
+                        System.out.println("Task successfully created: " + taskDto);
                         break;
                     case 2:
                         System.out.println("Enter task id: ");
                         Long id = Long.valueOf(scanner.nextLine());
-                        Task task1 = service.findTaskById(id);
-                        System.out.println("Task found: " + task1);
+                        TaskEntity taskEntity1 = service.findTaskById(id);
+                        System.out.println("Task found: " + taskEntity1);
                         break;
                     case 3:
                         return;

@@ -1,9 +1,9 @@
 package com.javaguru.todolist.service.validation;
 
-import com.javaguru.todolist.domain.Task;
+import com.javaguru.todolist.dto.TaskDto;
 
 public interface TaskValidationRule {
 
-    void validate(Task task);
+    void validate(TaskDto taskDto);
 
 }

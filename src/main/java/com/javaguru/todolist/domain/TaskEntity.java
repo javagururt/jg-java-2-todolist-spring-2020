@@ -2,18 +2,13 @@ package com.javaguru.todolist.domain;
 
 import java.util.Objects;
 
-public class Task {
+public class TaskEntity {
 
-    private Long id;
-    private String name;
-    private String description;
+    private final Long id;
+    private final String name;
+    private final String description;
 
-    public Task(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
-    public Task(Long id, String name, String description) {
+    public TaskEntity(Long id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -35,10 +30,10 @@ public class Task {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return Objects.equals(id, task.id) &&
-                Objects.equals(name, task.name) &&
-                Objects.equals(description, task.description);
+        TaskEntity taskEntity = (TaskEntity) o;
+        return Objects.equals(id, taskEntity.id) &&
+                Objects.equals(name, taskEntity.name) &&
+                Objects.equals(description, taskEntity.description);
     }
 
     @Override
