@@ -3,15 +3,23 @@ package com.javaguru.todolist.service;
 import com.javaguru.todolist.domain.TaskEntity;
 import com.javaguru.todolist.dto.TaskDto;
 import com.javaguru.todolist.mappers.BeanMapper;
-import com.javaguru.todolist.repository.TaskInMemoryRepository;
+import com.javaguru.todolist.repository.TaskRepository;
 import com.javaguru.todolist.service.validation.TaskNotFoundException;
 import com.javaguru.todolist.service.validation.TaskValidationService;
 
 public class TaskService {
 
-    private TaskInMemoryRepository taskRepository = new TaskInMemoryRepository();
-    private TaskValidationService validationService = new TaskValidationService();
-    private BeanMapper beanMapper = new BeanMapper();
+    private final TaskRepository taskRepository;
+    private final TaskValidationService validationService;
+    private final BeanMapper beanMapper;
+
+    public TaskService(TaskRepository taskRepository,
+                       TaskValidationService validationService,
+                       BeanMapper beanMapper) {
+        this.taskRepository = taskRepository;
+        this.validationService = validationService;
+        this.beanMapper = beanMapper;
+    }
 
     public TaskDto save(TaskDto taskDto) {
         validationService.validate(taskDto);

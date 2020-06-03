@@ -22,4 +22,17 @@ public class TaskInMemoryRepository implements TaskRepository {
     public Optional<TaskEntity> findTaskById(Long id) {
         return Optional.ofNullable(repository.get(id));
     }
+
+    @Override
+    public Optional<TaskEntity> findTaskByName(String name) {
+//        for (TaskEntity entity : repository.values()) {
+//            if (entity.getName().equalsIgnoreCase(name)) {
+//                return Optional.of(entity);
+//            }
+//        }
+//        return Optional.empty();
+        return repository.values().stream()
+                .filter(entity -> entity.getName().equalsIgnoreCase(name))
+                .findFirst();
+    }
 }

@@ -10,7 +10,11 @@ import java.util.Scanner;
 
 public class ConsoleUI {
 
-    private final TaskService service = new TaskService();
+    private final TaskService service;
+
+    public ConsoleUI(TaskService service) {
+        this.service = service;
+    }
 
     public void start() {
         Scanner scanner = new Scanner(System.in);

@@ -10,4 +10,6 @@ public interface TaskRepository {
 
     Optional<TaskEntity> findTaskById(Long id);
 
+    Optional<TaskEntity> findTaskByName(String name);
+
 }
