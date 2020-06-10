@@ -2,8 +2,11 @@ package com.javaguru.todolist.service.validation;
 
 import com.javaguru.todolist.dto.TaskDto;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Set;
 
+@Service
 public class TaskValidationService {
 
     private final Set<TaskValidationRule> validationRules;

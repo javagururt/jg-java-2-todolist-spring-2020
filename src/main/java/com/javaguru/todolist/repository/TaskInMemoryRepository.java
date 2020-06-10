@@ -2,10 +2,13 @@ package com.javaguru.todolist.repository;
 
 import com.javaguru.todolist.domain.TaskEntity;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class TaskInMemoryRepository implements TaskRepository {
 
     private final Map<Long, TaskEntity> repository = new HashMap<>();

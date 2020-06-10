@@ -7,6 +7,9 @@ import com.javaguru.todolist.repository.TaskRepository;
 import com.javaguru.todolist.service.validation.TaskNotFoundException;
 import com.javaguru.todolist.service.validation.TaskValidationService;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class TaskService {
 
     private final TaskRepository taskRepository;

@@ -3,6 +3,9 @@ package com.javaguru.todolist.service.validation;
 import com.javaguru.todolist.dto.TaskDto;
 import com.javaguru.todolist.repository.TaskRepository;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TaskUniqueNameValidationRule implements TaskValidationRule {
 
     private final TaskRepository repository;
