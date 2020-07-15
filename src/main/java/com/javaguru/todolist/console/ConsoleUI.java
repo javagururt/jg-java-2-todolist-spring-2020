@@ -22,7 +22,7 @@ public class ConsoleUI {
         while (true) {
             try {
                 for (int i = 0; i < actions.size(); i++) {
-                    System.out.println(i + ". " + actions.get(i));
+                    System.out.println(i + ". " + actions.get(i).getMenuActionName());
                 }
                 int userInput = Integer.parseInt(scanner.nextLine());
                 if (userInput < 0 || userInput >= actions.size()) {

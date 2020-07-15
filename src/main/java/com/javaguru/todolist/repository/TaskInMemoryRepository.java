@@ -2,13 +2,16 @@ package com.javaguru.todolist.repository;
 
 import com.javaguru.todolist.domain.TaskEntity;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 @Repository
+@Profile("inmemory")
 public class TaskInMemoryRepository implements TaskRepository {
 
     private final Map<Long, TaskEntity> repository = new HashMap<>();
@@ -37,5 +40,10 @@ public class TaskInMemoryRepository implements TaskRepository {
         return repository.values().stream()
                 .filter(entity -> entity.getName().equalsIgnoreCase(name))
                 .findFirst();
+    }
+
+    @Override
+    public List<TaskEntity> findAll() {
+        return null;
     }
 }

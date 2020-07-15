@@ -32,9 +32,8 @@ public class CreateTaskAction implements MenuAction {
         System.out.println("Task successfully created: " + taskDto);
     }
 
-
     @Override
-    public String toString() {
+    public String getMenuActionName() {
         return "Create task";
     }
 }

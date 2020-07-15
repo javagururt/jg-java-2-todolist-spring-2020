@@ -14,6 +14,12 @@ public class TaskEntity {
         this.description = description;
     }
 
+    private TaskEntity(Builder builder) {
+        id = builder.id;
+        name = builder.name;
+        description = builder.description;
+    }
+
     public Long getId() {
         return id;
     }
@@ -48,5 +54,34 @@ public class TaskEntity {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+
+    public static final class Builder {
+        private Long id;
+        private String name;
+        private String description;
+
+        public Builder() {
+        }
+
+        public Builder withId(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public TaskEntity build() {
+            return new TaskEntity(this);
+        }
     }
 }

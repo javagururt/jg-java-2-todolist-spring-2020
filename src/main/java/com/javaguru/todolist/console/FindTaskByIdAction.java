@@ -28,7 +28,8 @@ class FindTaskByIdAction implements MenuAction {
     }
 
     @Override
-    public String toString() {
+    public String getMenuActionName() {
         return "Find task by id";
     }
+
 }

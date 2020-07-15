@@ -9,6 +9,8 @@ import com.javaguru.todolist.service.validation.TaskValidationService;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TaskService {
 
@@ -43,5 +45,9 @@ public class TaskService {
             throw new TaskNotFoundException("Task not found, id: " + id);
         }
         */
+    }
+
+    public List<TaskEntity> findAll() {
+        return taskRepository.findAll();
     }
 }

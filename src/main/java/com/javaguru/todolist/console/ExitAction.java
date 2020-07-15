@@ -4,7 +4,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
-@Order(2)
+@Order(3)
 class ExitAction implements MenuAction {
 
     @Override
@@ -14,7 +14,7 @@ class ExitAction implements MenuAction {
     }
 
     @Override
-    public String toString() {
+    public String getMenuActionName() {
         return "Exit";
     }
 }
