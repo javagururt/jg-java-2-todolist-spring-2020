@@ -8,6 +8,7 @@ import com.javaguru.todolist.service.validation.TaskNotFoundException;
 import com.javaguru.todolist.service.validation.TaskValidationService;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

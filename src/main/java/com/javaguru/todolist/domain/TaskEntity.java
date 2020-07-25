@@ -2,11 +2,28 @@ package com.javaguru.todolist.domain;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "task")
 public class TaskEntity {
 
-    private final Long id;
-    private final String name;
-    private final String description;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "description")
+    private String description;
+
+    public TaskEntity() {
+    }
 
     public TaskEntity(Long id, String name, String description) {
         this.id = id;
@@ -30,6 +47,18 @@ public class TaskEntity {
 
     public String getDescription() {
         return description;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
