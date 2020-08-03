@@ -15,4 +15,5 @@ public interface TaskRepository {
 
     List<TaskEntity> findAll();
 
+    void update(TaskEntity taskEntity);
 }

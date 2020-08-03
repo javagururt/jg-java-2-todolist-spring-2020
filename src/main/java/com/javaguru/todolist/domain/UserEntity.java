@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,7 +25,6 @@ public class UserEntity {
     private String name;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
-//    @JoinColumn(name = "user_id")
     private Set<TaskEntity> tasks;
 
     public Long getId() {

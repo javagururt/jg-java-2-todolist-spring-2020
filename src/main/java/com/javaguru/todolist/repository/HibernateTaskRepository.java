@@ -60,4 +60,9 @@ class HibernateTaskRepository implements TaskRepository {
         query.select(root);
         return currentSession.createQuery(query).getResultList();
     }
+
+    @Override
+    public void update(TaskEntity taskEntity) {
+        sessionFactory.getCurrentSession().update(taskEntity);
+    }
 }

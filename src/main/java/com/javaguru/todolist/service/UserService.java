@@ -1,13 +1,11 @@
 package com.javaguru.todolist.service;
 
-import com.javaguru.todolist.domain.TaskEntity;
 import com.javaguru.todolist.domain.UserEntity;
 import com.javaguru.todolist.repository.UserRepository;
 
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -26,14 +24,17 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    /* @JoinColumn example
     public void addTask(TaskEntity taskEntity, Long userId) {
         UserEntity user = findById(userId)
                 .orElseThrow(() -> new IllegalArgumentException("User not found, id: " + userId));
         user.getTasks().add(taskEntity);
         userRepository.update(user);
     }
-
-    private Optional<UserEntity> findById(Long userId) {
-        return userRepository.findById(userId);
+     */
+    public UserEntity findUserById(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found, id: " + userId));
     }
+
 }

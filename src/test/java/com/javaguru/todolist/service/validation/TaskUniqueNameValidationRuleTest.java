@@ -2,7 +2,7 @@ package com.javaguru.todolist.service.validation;
 
 import com.javaguru.todolist.domain.TaskEntity;
 import com.javaguru.todolist.dto.TaskDto;
-import com.javaguru.todolist.repository.TaskInMemoryRepository;
+import com.javaguru.todolist.repository.TaskRepository;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +24,7 @@ public class TaskUniqueNameValidationRuleTest {
     public static final String TASK_DESCRIPTION = "TEST_DESCRIPTION";
 
     @Mock
-    private TaskInMemoryRepository inMemoryRepository;
+    private TaskRepository inMemoryRepository;
 
     @Spy
     @InjectMocks

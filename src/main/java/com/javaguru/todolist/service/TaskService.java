@@ -50,4 +50,8 @@ public class TaskService {
     public List<TaskEntity> findAll() {
         return taskRepository.findAll();
     }
+
+    public void update(TaskEntity taskEntity) {
+        taskRepository.update(taskEntity);
+    }
 }
